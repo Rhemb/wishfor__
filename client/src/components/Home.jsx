@@ -14,7 +14,7 @@ const Home = ({allItems, deleteItem}) => {
                 { allItems.length === 0 ?
                     <div className="d-flex flex-column align-items-center"> 
                         <h1 className="text-white">Nothing to See Here.</h1>
-                        <Link to={'/new'}>Start Building Your Wishlist</Link>
+                        <Link to={'/new'} className="btn text-white">Start Building Your Wishlist</Link>
                     </div> 
                     : allItems.map(item => {
                         return (

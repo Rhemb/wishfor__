@@ -32,7 +32,7 @@ const Main = (props) => {
                 <Route path='/' element={<WelcomePage />} />
                 <Route path='/home' element={<Home allItems={allItems} deleteItem={deleteItem} />} />
                 <Route path='/new' element={<NewItem allItems={allItems} setAllItems={setAllItems} />} />
-                <Route path='/edit/:id' element={<Edit />} />
+                <Route path='/edit/:id' element={<Edit allItems={allItems} setAllItems={setAllItems} />} />
             </Routes>
         </div>
     )
