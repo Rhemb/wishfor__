@@ -11,7 +11,7 @@ const wishlistItem = new mongoose.Schema({
     },
     quantity: {
         type: Number,
-        min: [0,'Quantity cannot be 0'],
+        min: [0,'Quantity cannot be 0 or less.'],
         max: 99,
         required: [true, "Invalid Quantity"]
     },
