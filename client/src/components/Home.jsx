@@ -10,7 +10,7 @@ const Home = ({allItems, deleteItem}) => {
     return (
         <div className="home-background">
             <div className="home-container">
-                <nav className="home-nav d-flex flex-row align-items-center"><h1 className="logo-header">Wishfor__</h1><Link to={'/new'} className="btn text-white">Add Item </Link></nav>
+                <nav className="home-nav d-flex flex-row align-items-center"><Link className="btn mt-5 logo-header" to={'/'} >Wishfor__</Link><Link to={'/new'} className="btn mt-4 text-white">Add Item </Link></nav>
                 { allItems.length === 0 ?
                     <div className="d-flex flex-column align-items-center"> 
                         <h1 className="text-white">Nothing to See Here.</h1>

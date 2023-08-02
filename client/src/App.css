@@ -37,15 +37,39 @@
   }
 } */
 
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=DM+Sans:opsz,wght@9..40,100;9..40,300;9..40,400&display=swap');
+
 * {
   margin: 0;
   padding: 0;
 }
 
+#welcome-header {
+  font-family: Borel;
+  font-size: 60px;
+}
+
+.welcome-subheader {
+  font-family: DM Sans;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.welcome-button {
+  font-family: DM Sans;
+  font-weight: 300;
+  font-size: 17px;
+}
+
 .homepage-container {
   background: rgb(30, 30, 87);
   height: 100vh;
-  /* background-image: url('../src/images/background_img.avif'); */
+  width: 100%;
+  background: url('../src/images/night-sky.jpeg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .home-background{
@@ -61,8 +85,47 @@
   justify-content: space-between;
 }
 
+.main-body {
+  animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .logo-header {
   color: white;
+  font-family: Borel;
+  font-size: 40px;
+}
+
+.logo-header:hover {
+  color: #7ea8dc;
 }
 
 .list-item-container {
