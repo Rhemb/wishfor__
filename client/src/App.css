@@ -37,7 +37,7 @@
   }
 } */
 
-@import url('https://fonts.googleapis.com/css2?family=Borel&family=DM+Sans:opsz,wght@9..40,100;9..40,300;9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=DM+Sans:opsz,wght@9..40,100;9..40,300;9..40,400;9..40,500&display=swap');
 
 * {
   margin: 0;
@@ -55,17 +55,28 @@
   font-size: 20px;
 }
 
+.emphasize-text {
+  color: #7ea8dc;
+}
+
 .welcome-button {
   font-family: DM Sans;
   font-weight: 300;
   font-size: 17px;
 }
 
+.welcome-button:hover {
+  background: #0d1934;
+  border: none;
+  color: #ffff;
+  box-shadow: 0 0 20px #ffff;
+}
+
 .homepage-container {
   background: rgb(30, 30, 87);
   height: 100vh;
   width: 100%;
-  background: url('../src/images/night-sky.jpeg') no-repeat center center fixed; 
+  background: url('../src/images/background_img.avif') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -74,7 +85,9 @@
 
 .home-background{
   height: 100vh;
-  background-color: #0d1934;
+  /* background-color: linear-gradient(#0d1934, #3a4f6a);
+   */
+  background: linear-gradient(#0d1934, #7ea8dc);
 }
 
 .home-container {
@@ -118,6 +131,8 @@
   100% { opacity: 1; }
 }
 
+/* HomePage Section */
+
 .logo-header {
   color: white;
   font-family: Borel;
@@ -128,19 +143,56 @@
   color: #7ea8dc;
 }
 
+.add-item {
+  font-family: DM Sans;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.add-item:hover {
+  background-color: #7ea8dc66;
+  box-shadow: 0px 0px 15px #7ea8dc;
+}
+
 .list-item-container {
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0px 0px 20px rgb(72, 139, 184);
+  height: 8em;
 }
 
 li {
   list-style: none;
 }
 
+.list-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.list {
+  padding: 25px;
+}
+
+.item-label {
+  font-family: DM Sans;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.action-container {
+  width: 5em;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .action-icon {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   cursor: pointer;
 }
 

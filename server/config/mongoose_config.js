@@ -8,4 +8,4 @@ mongoose.connect("mongodb://127.0.0.1/wishlist", {
     .catch ( err => console.log('oops! An error occurred.', err))
 
 //req model
-require('../models/Wishlist');
+// require('../models/Wishlist');

@@ -6,9 +6,15 @@ app.use(cors());
 
 //req mongoose.config
 require('./config/mongoose_config')
-app.use(express.json(), express.urlencoded({extended: true}));
+app.use(
+    cors(),
+    express.json(), 
+    express.urlencoded({extended: true})
+
+);
 
 //req route
 require('./routes/itemRoutes')(app);
+require('./routes/userRoutes')(app);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
