@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Routes, Route,useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 import WelcomePage from "./WelcomePage";
@@ -7,14 +7,19 @@ import Home from "./Home";
 import NewItem from "./NewItem";
 import Edit from "./Edit";
 
-const Main = (props) => {
-    const [allItems, setAllItems] = useState([])
+const Main = ({authError, setAuthError}) => {
+    const [allItems, setAllItems] = useState([]);
+    // const [errors, setErrors] = useState([]);
     const navigate = useNavigate();
     
     useEffect(() => {
-        axios.get('http://localhost:8000/api/items')
+        axios.get('http://localhost:8000/api/items', {withCredentials: true})
             .then(res => setAllItems(res.data))
-            .catch( err => console.log(err));
+            .catch(err => {
+                console.log(err)
+                setAuthError("You Must be Logged In!");
+                navigate('/user/login')
+            })
     }, [])
 
     const deleteItem = (id) => {
@@ -30,7 +35,7 @@ const Main = (props) => {
         <div>
             <Routes>
                 <Route path='/' element={<WelcomePage />} />
-                <Route path='/home' element={<Home allItems={allItems} deleteItem={deleteItem} />} />
+                <Route path='/home' element={<Home allItems={allItems} deleteItem={deleteItem} authError={authError} setAuthError={setAuthError}/>} />
                 <Route path='/new' element={<NewItem allItems={allItems} setAllItems={setAllItems} />} />
                 <Route path='/edit/:id' element={<Edit allItems={allItems} setAllItems={setAllItems} />} />
             </Routes>
