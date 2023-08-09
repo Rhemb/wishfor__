@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Main from './components/Main';
 import LoginRegRoutes from './components/LoginRegRoutes';
+import WelcomePage from './components/WelcomePage';
 
 function App() {
   const [errors, setErrors] = useState([]);
@@ -13,6 +14,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
+          <Route path='/' element={<WelcomePage />} />
           <Route path='/*' element={<Main errors={errors} setErrors={setErrors} authError={authError} setAuthError={setAuthError}/>} />
           <Route path='/user/*' element={<LoginRegRoutes errors={errors} setErrors={setErrors} authError={authError} setAuthError={setAuthError}/>} />
         </Routes>

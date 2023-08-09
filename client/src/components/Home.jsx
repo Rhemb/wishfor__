@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Home = ({allItems, deleteItem /*,authError, setAuthError*/}) => {
+const Home = ({allItems, deleteItem}) => {
     const navigate = useNavigate();
     // console.log(allItems)
     
@@ -22,7 +22,7 @@ const Home = ({allItems, deleteItem /*,authError, setAuthError*/}) => {
     return (
         <div className="home-background">
             <div className="home-container">
-                <nav className="mb-5 home-nav d-flex flex-row align-items-center">
+                <nav className="mb-2 home-nav d-flex flex-row align-items-center">
                     <Link className="btn mt-5 logo-header" to={'/home'} >Wishfor__</Link>
                     <ul className="nav-list mt-5 d-flex flex-row align-items-center">
                         <li className="mx-4">
@@ -31,7 +31,7 @@ const Home = ({allItems, deleteItem /*,authError, setAuthError*/}) => {
                         <li><button onClick={logout} className="logout btn btn-light">Log Out</button></li>
                     </ul>
                 </nav>
-                
+                <div className="d-flex justify-content-center text-white mb-3" style={{fontFamily: "DM Sans"}}><h1>Wishlist</h1></div>
                 { allItems.length === 0 ?
                     <div className="d-flex flex-column align-items-center"> 
                         <h1 className="text-white">Nothing to See Here.</h1>
