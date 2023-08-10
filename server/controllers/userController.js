@@ -24,6 +24,7 @@ module.exports = {
 
     login: async(req, res) => {
         try {
+            console.log(req.body);
             const user = await User.findOne({email : req.body.email });
             if(user === null) {
                 return res.status(400).json({ message: "Invalid Credentials"})

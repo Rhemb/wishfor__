@@ -11,7 +11,7 @@ const Main = ({authError, setAuthError}) => {
     const navigate = useNavigate();
     
     useEffect(() => {
-        axios.get('http://localhost:8000/api/items' /*,{withCredentials: true}*/)
+        axios.get('http://localhost:8000/api/items',{withCredentials: true})
             .then(res => setAllItems(res.data))
             .catch(err => {
                 console.log(err)

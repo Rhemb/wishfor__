@@ -60,7 +60,7 @@ const Home = ({allItems, deleteItem}) => {
                                     <div className="action-container d-flex">
                                         <br></br>
                                         <Link to={`/edit/${item._id}`}><img className="action-icon" src={require('../images/edit-icon.png')} alt="edit-icon"></img></Link>
-                                        <img className="action-icon mx-5" src={require('../images/delete-icon.png')} alt="delete-icon" onClick={deleteHandler}></img>
+                                        <img className="action-icon mx-5" src={require('../images/delete-icon.png')} alt="delete-icon" id={item._id} onClick={deleteHandler}></img>
                                     </div>
                                 </ul>
                             </div>
