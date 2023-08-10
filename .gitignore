@@ -1,4 +1,7 @@
-.env
+.env, 
+
+#dependencies
+/node_modules
 
 # Created by https://www.toptal.com/developers/gitignore/api/react,node,macos,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=react,node,macos,windows
