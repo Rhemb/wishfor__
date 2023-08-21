@@ -3,11 +3,6 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from 'axios';
 
 const Register = ({errors, setErrors, authError, setAuthError}) => {
-    // const [firstName, setFirstName] = useState("");
-    // const [lastName, setLastName] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
-    // const [confirmPassword, setConfirmPassword] = useState("");
     const [formState, setFormState] = useState ({
         firstName: '',
         lastName: '',
@@ -24,8 +19,8 @@ const Register = ({errors, setErrors, authError, setAuthError}) => {
             ...formState,
             [e.target.name] : e.target.value
         })
-
     }
+    
     const handleSubmit = e => {
         e.preventDefault();
         

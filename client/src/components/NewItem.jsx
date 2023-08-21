@@ -5,8 +5,8 @@ import axios from 'axios'
 const NewItem = ({allItems, setAllItems}) => {
     const [itemName, setItemName] = useState("");
     const [link, setLink] = useState("");
-    const [quantity, setQuantity] = useState(0);
-    const [priority, setPriority] = useState("");
+    const [quantity, setQuantity] = useState(1);
+    const [priority, setPriority] = useState("Medium");
     const [comments, setComments] = useState("");
     const [errors, setErrors] = useState([]);
     const navigate = useNavigate();
@@ -56,7 +56,7 @@ const NewItem = ({allItems, setAllItems}) => {
                             <label className="form-label" htmlFor="priority">Priority</label>
                             <select className="form-select" value={priority} name="priority" id="priority" onChange={e => setPriority(e.target.value)}>
                                 <option value="Low">Low</option>
-                                <option value="Medium" selected>Medium</option>
+                                <option value="Medium">Medium</option>
                                 <option value="High">High</option>
                             </select>
                         </div>
