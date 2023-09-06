@@ -28,9 +28,9 @@ npm install
 ```
 Open up both server and client folder on 2 different terminals
 ```
-// Client Folder: 
+// Client Folder: `wishfor__ % cd client`
 npm start
 
-// Server Folder:
+// Server Folder: `wishfor__% cd server`
 nodemon server.js
 ```
