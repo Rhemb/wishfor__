@@ -2,13 +2,18 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Home = ({allCategories, allItems, deleteItem}) => {
+const Home = ({allCategories, allItems, deleteItem, deleteCategory}) => {
     const navigate = useNavigate();
     // console.log(allItems)
     
     const deleteHandler = e => {
         const itemId = e.target.id;
         deleteItem(itemId);
+    }
+
+    const deleteCategoryHandler = e => {
+        const categoryId = e.target.id;
+        deleteCategory(categoryId);
     }
 
     const logout = () => {
@@ -48,6 +53,7 @@ const Home = ({allCategories, allItems, deleteItem}) => {
                                                 <p style={{fontWeight:"800"}}>{category.categoryName}</p>
                                                 <p>{category.categoryDescription}</p>
                                             </Link>
+                                            <img className="action-icon mx-5" src={require('../images/delete-icon.png')} alt="delete-icon" id={category._id} onClick={deleteCategoryHandler} />
                                         </div>
                                 </div>
                             )
