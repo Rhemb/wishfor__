@@ -2,19 +2,20 @@ import React, {useState} from "react";
 import {Link ,useNavigate} from 'react-router-dom';
 import axios from 'axios'
 
-const NewItem = ({allItems, setAllItems}) => {
+const NewItem = ({allItems, setAllItems, allCategories}) => {
     const [itemName, setItemName] = useState("");
     const [link, setLink] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [priority, setPriority] = useState("Medium");
     const [comments, setComments] = useState("");
+    const [category, setCategory] = useState("");
     const [errors, setErrors] = useState([]);
     const navigate = useNavigate();
 
     const formHandler = e => {
         e.preventDefault();
 
-        const newItem = { itemName, link, quantity, priority, comments }
+        const newItem = { category, itemName, link, quantity, priority, comments }
 
         axios.post('http://127.0.0.1:8000/api/items', newItem)
             .then( res => {
@@ -33,7 +34,18 @@ const NewItem = ({allItems, setAllItems}) => {
                     <Link className="mx-5 btn btn-light nav-home-btn" to={'/home'}>Navigate Home</Link>
                 </nav>
                 <form className="row g-3 form-container mt-5 d-flex flex-column justify-content-center align-items-center" onSubmit={formHandler}>
-                    <h1 className="d-flex justify-content-center mb-5">New Item</h1>
+                    <h1 className="d-flex justify-content-center mb-3">New Item</h1>
+                    <div className="col-md-6 d-flex flex-column mb-3">
+                        <label className="form-label" htmlFor="priority">Category</label>
+                        <select className="form-select" value={category} name="priority" id="priority" onChange={e => setCategory(e.target.value)}>
+                            <option value="none">None</option>
+                            { allCategories.map ( category => {
+                                return (
+                                    <option key={category._id} value={category.categoryName}>{category.categoryName}</option>
+                                )
+                            })}
+                        </select>
+                    </div>
                     <div className="row d-flex flex-row">
                         <div className="col-md-6 d-flex flex-column mb-3">
                             <label className="form-label" htmlFor="itemName">Item Name</label>

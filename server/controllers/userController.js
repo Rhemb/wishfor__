@@ -5,10 +5,10 @@ const jwt = require('jsonwebtoken');
 module.exports = {
     register: async (req, res) => {
         try {
-            const user = await User.findOne({email : req.body.email});
-            if(user){
-                return res.status(400).json({message:'Email Already Exists! Please Login'});
-            } else {
+            const user = await User.findOne({email: req.body.email});
+            // if(user){
+            //     return res.status(400).json({message:'Email Already Exists! Please Login'});
+            // } else {
                 const newUser = await User.create(req.body);
                 const userToken = jwt.sign({
                     id: newUser._id,
@@ -16,7 +16,7 @@ module.exports = {
                 }, process.env.SECRET_KEY);
                 res.status(201).cookie('userToken', userToken, {httpOnly: true}).json(newUser);
             }
-        }
+        // }
         catch(err){
             res.status(400).json(err);
         }

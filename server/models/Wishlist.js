@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Category = require('../models/Category');
 
 const wishlistItem = new mongoose.Schema({
     itemName: {
@@ -20,7 +21,12 @@ const wishlistItem = new mongoose.Schema({
     },
     comments: {
         type: String
+    },
+    category : {
+        type: String
     }
+    
 }, {timestamps: true});
 
+module.exports = Category;
 module.exports = mongoose.model('wishlistItem', wishlistItem);

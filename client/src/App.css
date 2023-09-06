@@ -42,11 +42,15 @@
   font-family: DM Sans;
   /* background: linear-gradient(#31487d, #7ea8dc); */
   background: url('./images/login-background.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .register-main-container {
   font-family: DM Sans;
   background: url('./images/register-background.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .split {
@@ -132,7 +136,7 @@
 }
 
 .home-background{
-  height: 100vh;
+  height: 250vh;
   width: 100vw;
   background: linear-gradient(#0d1934, #7ea8dc);
 }
@@ -230,6 +234,35 @@
   left: 0; 
 }
 
+.category-btn {
+  background-color: #4e5a77;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.category-btn:hover {
+  box-shadow: 0 0 15px #ffffff;
+  background-color: #fff;
+  color: black;
+}
+
+.category-container:hover {
+  box-shadow: 0 0 15px #fff;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffff;
+  height: 150px;
+  width: 200px;
+  font-family: DM Sans;
+  cursor: pointer;
+}
+
 .list-item-container {
   border-radius: 10px;
   background-color: #fff;
@@ -272,6 +305,10 @@ li {
   cursor: pointer;
 }
 
+.list-body {
+  margin: 0 6em;
+}
+
 /* New Item Page */
 .new-item-container {
   height: 100vh;
@@ -304,4 +341,43 @@ form > h1 {
   width: 100%;
   background: linear-gradient(#31487d, #a0afc2);
 
+}
+
+/* category page */
+
+.category-home-btn {
+  text-decoration: none;
+  color: rgb(4, 4, 4);
+  border: 2px solid #000;
+  border-radius: 0;
+  height: 40px;
+  width: 9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-item-container-category {
+  /* border-radius: 10px; */
+  background-color: #fff;
+  box-shadow: 0px 0px 15px rgb(185, 196, 204);
+  height: 8em;
+  width: 70em;
+}
+
+.category-subheader {
+  border-bottom: 2px solid #dfdcdb;
+  margin-bottom: 1em;
+}
+
+.category-sidebar-container {
+  width: 14em;
+}
+
+.category-sidebar-list {
+  font-weight: 400;
+}
+
+.category-sidebar-list:hover {
+  font-weight: 600;
 }

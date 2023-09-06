@@ -17,5 +17,6 @@ require('dotenv').config();
 //req route
 require('./routes/itemRoutes')(app);
 require('./routes/userRoutes')(app);
+require('./routes/categoryRoutes')(app);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
