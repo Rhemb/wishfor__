@@ -10,6 +10,9 @@ const wishlistItem = new mongoose.Schema({
         type: String,
         required: [true, "Link Required"]
     },
+    itemImage: {
+        type: String,
+    },
     quantity: {
         type: Number,
         min: [1,'Quantity cannot be 0 or less.'],

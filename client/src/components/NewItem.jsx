@@ -5,6 +5,7 @@ import axios from 'axios'
 const NewItem = ({allItems, setAllItems, allCategories}) => {
     const [itemName, setItemName] = useState("");
     const [link, setLink] = useState("");
+    const [itemImage, setItemImage] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [priority, setPriority] = useState("Medium");
     const [comments, setComments] = useState("");
@@ -15,7 +16,7 @@ const NewItem = ({allItems, setAllItems, allCategories}) => {
     const formHandler = e => {
         e.preventDefault();
 
-        const newItem = { category, itemName, link, quantity, priority, comments }
+        const newItem = { category, itemName, itemImage, link, quantity, priority, comments }
 
         axios.post('http://127.0.0.1:8000/api/items', newItem)
             .then( res => {
@@ -35,16 +36,22 @@ const NewItem = ({allItems, setAllItems, allCategories}) => {
                 </nav>
                 <form className="row g-3 form-container mt-5 d-flex flex-column justify-content-center align-items-center" onSubmit={formHandler}>
                     <h1 className="d-flex justify-content-center mb-3">New Item</h1>
-                    <div className="col-md-6 d-flex flex-column mb-3">
-                        <label className="form-label" htmlFor="priority">Category</label>
-                        <select className="form-select" value={category} name="priority" id="priority" onChange={e => setCategory(e.target.value)}>
-                            <option value="none">None</option>
-                            { allCategories.map ( category => {
-                                return (
-                                    <option key={category._id} value={category.categoryName}>{category.categoryName}</option>
-                                )
-                            })}
-                        </select>
+                    <div className="row d-flex flex-row">
+                        <div className="col-md-6 d-flex flex-column mb-3">
+                            <label className="form-label" htmlFor="priority">Category</label>
+                            <select className="form-select" value={category} name="priority" id="priority" onChange={e => setCategory(e.target.value)}>
+                                <option value="none">None</option>
+                                { allCategories.map ( category => {
+                                    return (
+                                        <option key={category._id} value={category.categoryName}>{category.categoryName}</option>
+                                    )
+                                })}
+                            </select>
+                        </div>
+                        <div className="col-md-6 d-flex flex-column mb-3">
+                            <label className="form-label" htmlFor="itemName">Item Image Link <i>(Optional)</i></label>
+                            <input className="form-control" type="text" name="itemName" id="itemName" value={itemName} onChange={e => setItemName(e.target.value)}></input>
+                        </div>
                     </div>
                     <div className="row d-flex flex-row">
                         <div className="col-md-6 d-flex flex-column mb-3">
